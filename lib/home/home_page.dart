@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
       ),
       backgroundColor: Colors.grey[200], // 배경 색상 설정
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           StationSelector(),
         ],
