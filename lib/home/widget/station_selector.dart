@@ -12,12 +12,33 @@ class StationSelector extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text('출발역',  // 텍스트 입력
-          style: TextStyle(fontSize: 16, // 텍스트 스타일 변경
-          color: Colors.grey,
-          fontWeight: FontWeight.bold),),
-          Text('도착역', style: TextStyle(fontSize: 16, // 텍스트 입력
-          color: Colors.grey, fontWeight: FontWeight.bold),) // 텍스트 스타일 변경
+          Column( // 출발역 Text Wrap with Column 해서 선택 글자 구현
+            children: [
+              Text(
+                '출발역', // 텍스트 입력
+                style: TextStyle(
+                    fontSize: 16, // 텍스트 스타일 변경
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                '선택',
+                style: TextStyle(fontSize: 40),
+              )
+            ],
+          ),
+          Column(
+            children: [
+              Text(
+                '도착역',
+                style: TextStyle(
+                    fontSize: 16, // 텍스트 입력
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text('선택', style: TextStyle(fontSize: 40),)
+            ],
+          ) // 텍스트 스타일 변경
         ],
       ),
     );
