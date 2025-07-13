@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('기차 예매'),
       ),
+      backgroundColor: Colors.grey[200], // 배경 색상 설정
       body: Column(
         children: [
           StationSelector(),
