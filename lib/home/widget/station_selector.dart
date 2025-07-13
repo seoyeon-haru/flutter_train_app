@@ -27,6 +27,7 @@ class StationSelector extends StatelessWidget {
               )
             ],
           ),
+          Container(width: 2, height: 50, color: Colors.grey[400],), // 가운데 선 구현
           Column(
             children: [
               Text(
