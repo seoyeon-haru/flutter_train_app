@@ -9,26 +9,29 @@ class HomePage extends StatelessWidget {
         title: Text('기차 예매'),
       ),
       backgroundColor: Colors.grey[200], // 배경 색상 설정
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          StationSelector(),
-          SizedBox(height: 20),
-          SizedBox(
-            width: double.infinity,
-            height: 50,
-            child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.purple),
-                child: Text(
-                  '좌석 선택',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold),
-                )),
-          )
-        ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            StationSelector(),
+            SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              height: 50,
+              child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.purple),
+                  child: Text(
+                    '좌석 선택',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  )),
+            )
+          ],
+        ),
       ),
     );
   }
