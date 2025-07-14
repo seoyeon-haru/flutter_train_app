@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
-class StationNameList extends StatelessWidget {
+class DestinationList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        GestureDetector( // 수서를 클릭하면 처음 페이지로 돌아가기
+        GestureDetector(
+          // 수서를 클릭하면 처음 페이지로 돌아가기
           onTap: () {
             Navigator.pop(context, '수서');
           },
@@ -30,7 +30,8 @@ class StationNameList extends StatelessWidget {
                 ),
               )),
         ),
-       GestureDetector( // 동탄을 클릭하면 처음 페이지로 돌아가기
+        GestureDetector(
+          // 동탄을 클릭하면 처음 페이지로 돌아가기
           onTap: () {
             Navigator.pop(context, '동탄');
           },
@@ -54,7 +55,8 @@ class StationNameList extends StatelessWidget {
                 ),
               )),
         ),
-        GestureDetector( // 평택지제를 클릭하면 처음 페이지로 돌아가기
+        GestureDetector(
+          // 평택지제를 클릭하면 처음 페이지로 돌아가기
           onTap: () {
             Navigator.pop(context, '평택지제');
           },
@@ -78,7 +80,8 @@ class StationNameList extends StatelessWidget {
                 ),
               )),
         ),
-        GestureDetector( // 천안아산을 클릭하면 처음 페이지로 돌아가기
+        GestureDetector(
+          // 천안아산을 클릭하면 처음 페이지로 돌아가기
           onTap: () {
             Navigator.pop(context, '천안아산');
           },
@@ -102,7 +105,8 @@ class StationNameList extends StatelessWidget {
                 ),
               )),
         ),
-        GestureDetector( // 오송을 클릭하면 처음 페이지로 돌아가기
+        GestureDetector(
+          // 오송을 클릭하면 처음 페이지로 돌아가기
           onTap: () {
             Navigator.pop(context, '오송');
           },
@@ -126,7 +130,8 @@ class StationNameList extends StatelessWidget {
                 ),
               )),
         ),
-        GestureDetector( // 대전을 클릭하면 처음 페이지로 돌아가기
+        GestureDetector(
+          // 대전을 클릭하면 처음 페이지로 돌아가기
           onTap: () {
             Navigator.pop(context, '대전');
           },
@@ -150,7 +155,8 @@ class StationNameList extends StatelessWidget {
                 ),
               )),
         ),
-        GestureDetector( // 김천구미를 클릭하면 처음 페이지로 돌아가기
+        GestureDetector(
+          // 김천구미를 클릭하면 처음 페이지로 돌아가기
           onTap: () {
             Navigator.pop(context, '김천구미');
           },
@@ -174,7 +180,8 @@ class StationNameList extends StatelessWidget {
                 ),
               )),
         ),
-        GestureDetector( // 동대구를 클릭하면 처음 페이지로 돌아가기
+        GestureDetector(
+          // 동대구를 클릭하면 처음 페이지로 돌아가기
           onTap: () {
             Navigator.pop(context, '동대구');
           },
@@ -198,7 +205,8 @@ class StationNameList extends StatelessWidget {
                 ),
               )),
         ),
-        GestureDetector( // 경주를 클릭하면 처음 페이지로 돌아가기
+        GestureDetector(
+          // 경주를 클릭하면 처음 페이지로 돌아가기
           onTap: () {
             Navigator.pop(context, '경주');
           },
@@ -222,7 +230,8 @@ class StationNameList extends StatelessWidget {
                 ),
               )),
         ),
-        GestureDetector( // 울산을 클릭하면 처음 페이지로 돌아가기
+        GestureDetector(
+          // 울산을 클릭하면 처음 페이지로 돌아가기
           onTap: () {
             Navigator.pop(context, '울산');
           },
@@ -246,7 +255,8 @@ class StationNameList extends StatelessWidget {
                 ),
               )),
         ),
-        GestureDetector( // 부산을 클릭하면 처음 페이지로 돌아가기
+        GestureDetector(
+          // 부산을 클릭하면 처음 페이지로 돌아가기
           onTap: () {
             Navigator.pop(context, '부산');
           },

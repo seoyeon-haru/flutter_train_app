@@ -6,7 +6,7 @@ class StationListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('출발역'),
+        title: Text('출발역'), 
       ),
       body: Column(
         children: [
