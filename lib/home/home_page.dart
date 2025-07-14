@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_train_app/fourth/seat_page.dart';
 import 'package:flutter_train_app/home/widget/station_selector.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,7 +21,11 @@ class HomePage extends StatelessWidget {
               width: double.infinity, 
               height: 50,
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return SeatPage();
+                    }));
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.purple, // 버튼 배경색 설정
                     shape: RoundedRectangleBorder(
