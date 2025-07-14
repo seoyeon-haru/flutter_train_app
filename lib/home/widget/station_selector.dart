@@ -13,6 +13,7 @@ class StationSelector extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column( // 출발역 Text Wrap with Column 해서 선택 글자 구현
+          mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 '출발역', // 텍스트 입력
@@ -29,6 +30,7 @@ class StationSelector extends StatelessWidget {
           ),
           Container(width: 2, height: 50, color: Colors.grey[400],), // 가운데 선 구현
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 '도착역',
