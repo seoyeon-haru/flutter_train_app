@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_train_app/fourth/seat_page.dart';
 import 'package:flutter_train_app/home/widget/station_selector.dart';
+import 'package:flutter_train_app/second/station_list_page.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -18,11 +19,12 @@ class HomePage extends StatelessWidget {
             StationSelector(),
             SizedBox(height: 20), // 간격
             SizedBox(
-              width: double.infinity, 
+              width: double.infinity,
               height: 50,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
                       return SeatPage();
                     }));
                   },

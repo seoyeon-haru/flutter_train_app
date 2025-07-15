@@ -37,14 +37,6 @@ class SeatSelect extends StatelessWidget {
           label(Colors.grey[300]!, '선택안됨'), // 함수 선언
         ],
       ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          textLabel('A'),
-          SizedBox(width: 4),
-          textLabel('B'),
-        ],
-      )
     ]);
   }
 }
@@ -60,17 +52,6 @@ Row label(Color color, String text) {
       ),
       SizedBox(width: 4),
       Text(text)
-    ],
-  );
-}
-
-Row textLabel(String text) {
-  return Row(
-    children: [
-      Container(
-        width: 50,
-        height: 50,
-      )
     ],
   );
 }
