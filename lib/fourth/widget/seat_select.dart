@@ -37,27 +37,13 @@ class SeatSelect extends StatelessWidget {
           label(Colors.grey[300]!, '선택안됨'), // 함수 선언
         ],
       ),
-      Expanded(
-        child: Column(
-          children: [
-            Expanded(
-              child: Text(
-                'A',
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
-            chair(),
-            chair(),
-            chair(),
-            chair(),
-            chair(),
-            chair(),
-            chair(),
-            chair(),
-            chair(),
-            chair(),
-          ],
-        ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          textLabel('A'),
+          SizedBox(width: 4),
+          textLabel('B'),
+        ],
       )
     ]);
   }
@@ -78,16 +64,13 @@ Row label(Color color, String text) {
   );
 }
 
-Widget chair() {
-  return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        child: AspectRatio(
-            aspectRatio: 1,
-            child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8), color: Colors.grey[300]!),
-            ),
-          ),
-      ));
+Row textLabel(String text) {
+  return Row(
+    children: [
+      Container(
+        width: 50,
+        height: 50,
+      )
+    ],
+  );
 }
