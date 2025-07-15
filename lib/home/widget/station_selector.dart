@@ -70,7 +70,7 @@ class _StationSelectorState extends State<StationSelector> {
                 onTap: () async {
                   String? result =
                       await Navigator.push(context, MaterialPageRoute(
-                    builder: (_) {
+                    builder: (context) {
                       return ArriveListPage();
                     },
                   ));

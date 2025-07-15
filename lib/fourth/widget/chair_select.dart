@@ -17,6 +17,7 @@ class _ChairSelectState extends State<ChairSelect> {
       }
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -47,33 +48,45 @@ class _ChairSelectState extends State<ChairSelect> {
             '$engLish',
             style: TextStyle(fontSize: 18),
           )),
-          chair(seatColor, 1, showText),
-          chair(seatColor, 2, showText),
-          chair(seatColor, 3, showText),
-          chair(seatColor, 4, showText),
-          chair(seatColor, 5, showText),
-          chair(seatColor, 6, showText),
-          chair(seatColor, 7, showText),
-          chair(seatColor, 8, showText),
-          chair(seatColor, 9, showText),
-          chair(seatColor, 10, showText),
-          chair(seatColor, 11, showText),
-          chair(seatColor, 12, showText),
-          chair(seatColor, 13, showText),
-          chair(seatColor, 14, showText),
-          chair(seatColor, 15, showText),
-          chair(seatColor, 16, showText),
-          chair(seatColor, 17, showText),
-          chair(seatColor, 18, showText),
-          chair(seatColor, 19, showText),
-          chair(seatColor, 20, showText),
+          for (int i = 1; i <= 20; i++)
+            GestureDetector(
+              onTap: () {
+                toggleSeat('$engLish$i');
+              },
+              child: chair(
+                  selectedSeats.contains('$engLish$i')
+                      ? Colors.purple
+                      : seatColor,
+                  i,
+                  showText),
+            )
+          // chair(seatColor, 1, showText),
+          // chair(seatColor, 2, showText),
+          // chair(seatColor, 3, showText),
+          // chair(seatColor, 4, showText),
+          // chair(seatColor, 5, showText),
+          // chair(seatColor, 6, showText),
+          // chair(seatColor, 7, showText),
+          // chair(seatColor, 8, showText),
+          // chair(seatColor, 9, showText),
+          // chair(seatColor, 10, showText),
+          // chair(seatColor, 11, showText),
+          // chair(seatColor, 12, showText),
+          // chair(seatColor, 13, showText),
+          // chair(seatColor, 14, showText),
+          // chair(seatColor, 15, showText),
+          // chair(seatColor, 16, showText),
+          // chair(seatColor, 17, showText),
+          // chair(seatColor, 18, showText),
+          // chair(seatColor, 19, showText),
+          // chair(seatColor, 20, showText),
         ],
       ),
     );
   }
 }
 
-Widget chair(seatColor, int? rowNum, bool showText) {
+Widget chair(seatColor, int rowNum, bool showText) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
     child: SizedBox(
@@ -82,11 +95,10 @@ Widget chair(seatColor, int? rowNum, bool showText) {
       child: AspectRatio(
         aspectRatio: 1,
         child: Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8), color: seatColor),
-          alignment: Alignment.center,
-          child: showText == true ? Text('$rowNum') : null
-        ),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8), color: seatColor),
+            alignment: Alignment.center,
+            child: showText == true ? Text('$rowNum') : null),
       ),
     ),
   );

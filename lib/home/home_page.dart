@@ -9,8 +9,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String? departureStation;
-  String? arrivalStation;
+  String departureStation = '선택';
+  String arrivalStation = '선택';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,8 +32,7 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return SeatPage(departure: '' ,
-                      arrival: '',);
+                      return SeatPage(departureStation , arrivalStation,);
                     }));
                   },
                   style: ElevatedButton.styleFrom(

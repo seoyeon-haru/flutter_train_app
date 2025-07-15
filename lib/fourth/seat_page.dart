@@ -7,7 +7,7 @@ class SeatPage extends StatefulWidget {
   final String departure;
   final String arrival;
 
-  SeatPage({required this.departure, required this.arrival});
+  SeatPage(this.departure, this.arrival);
   @override
   State<SeatPage> createState() => _SeatPageState();
 }
