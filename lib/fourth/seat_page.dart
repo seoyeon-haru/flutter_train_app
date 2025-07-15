@@ -4,10 +4,13 @@ import 'package:flutter_train_app/fourth/widget/chair_select.dart';
 import 'package:flutter_train_app/fourth/widget/seat_select.dart';
 
 class SeatPage extends StatefulWidget {
-  final String departure;
-  final String arrival;
+  String departureStation;
+  String arrivalStation;
 
-  SeatPage(this.departure, this.arrival);
+  SeatPage(
+      {super.key,
+      required this.departureStation,
+      required this.arrivalStation});
   @override
   State<SeatPage> createState() => _SeatPageState();
 }
@@ -22,8 +25,8 @@ class _SeatPageState extends State<SeatPage> {
       body: Column(
         children: [
           SeatSelect(
-            departure: widget.departure,
-            arrival: widget.arrival,
+            departureStation: widget.departureStation,
+            arrivalStation: widget.arrivalStation,
           ),
           Expanded(
             child: Padding(

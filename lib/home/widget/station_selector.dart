@@ -10,6 +10,8 @@ class StationSelector extends StatefulWidget {
 class _StationSelectorState extends State<StationSelector> {
   String? departureStation;
   String? arrivalStation;
+
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,7 +38,7 @@ class _StationSelectorState extends State<StationSelector> {
                 onTap: () async {
                   String? result = await Navigator.push(context,
                       MaterialPageRoute(builder: (context) {
-                    return StationListPage();
+                    return StationListPage(departureStation: departureStation, arrivalStation: arrivalStation,); // 역 리스트
                   }));
                   if (result != null) {
                     setState(() {
