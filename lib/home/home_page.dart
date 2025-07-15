@@ -3,7 +3,14 @@ import 'package:flutter_train_app/fourth/seat_page.dart';
 import 'package:flutter_train_app/home/widget/station_selector.dart';
 import 'package:flutter_train_app/second/station_list_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  String? departureStation;
+  String? arrivalStation;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +32,8 @@ class HomePage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return SeatPage();
+                      return SeatPage(departure: '' ,
+                      arrival: '',);
                     }));
                   },
                   style: ElevatedButton.styleFrom(

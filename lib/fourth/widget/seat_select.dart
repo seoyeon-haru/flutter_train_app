@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 class SeatSelect extends StatelessWidget {
+  final String departure;
+  final String arrival;
+
+  SeatSelect({required this.departure, required this.arrival});
   @override
   Widget build(BuildContext context) {
     return Column(children: [
       Row(
         mainAxisAlignment: MainAxisAlignment.center, // 가운데 정렬
         children: [
-          Text('수서',
+          Text(departure,
               style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -19,7 +23,7 @@ class SeatSelect extends StatelessWidget {
           ),
           SizedBox(width: 70), // 여백주기
           Text(
-            '부산',
+            arrival,
             style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,

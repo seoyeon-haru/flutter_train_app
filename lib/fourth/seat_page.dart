@@ -1,18 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_train_app/fourth/widget/chair_select.dart';
 import 'package:flutter_train_app/fourth/widget/seat_select.dart';
 
 class SeatPage extends StatefulWidget {
-  
+  final String departure;
+  final String arrival;
+
+  SeatPage({required this.departure, required this.arrival});
   @override
-  State<SeatPage> createState() => _SeatPageState(); 
-
-  
+  State<SeatPage> createState() => _SeatPageState();
 }
-class _SeatPageState extends State<SeatPage>{
 
-
-
+class _SeatPageState extends State<SeatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,18 +21,44 @@ class _SeatPageState extends State<SeatPage>{
       ),
       body: Column(
         children: [
-          SeatSelect(),
-        Expanded(child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 70),
-          child: ChairSelect(),
-        ),),
+          SeatSelect(
+            departure: widget.departure,
+            arrival: widget.arrival,
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 70),
+              child: ChairSelect(),
+            ),
+          ),
+
           // ChairSelect(),
           SizedBox(
             width: double.infinity,
             height: 50,
             child: ElevatedButton(
                 onPressed: () {
-                
+                  showCupertinoDialog(
+                      context: context,
+                      builder: (context) {
+                        return CupertinoAlertDialog(
+                          title: Text("예매 하시겠습니까?"),
+                          actions: [
+                            CupertinoDialogAction(
+                              isDefaultAction: true,
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text('취소'),
+                            ),
+                            CupertinoDialogAction(
+                              isDestructiveAction: true,
+                              onPressed: () {},
+                              child: Text('확인'),
+                            ),
+                          ],
+                        );
+                      });
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.purple, // 버튼 배경색 설정

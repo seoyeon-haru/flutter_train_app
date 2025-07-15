@@ -9,7 +9,7 @@ class DestinationList extends StatelessWidget {
           final String stationName = stations[index];
           return GestureDetector( // 역을 선택하면 
             onTap: () {
-              Navigator.pop(context, stationName[index]); // 뒤로 이동
+              Navigator.pop(context, stationName); // 뒤로 이동
             },
             child: Container(
               height: 50,

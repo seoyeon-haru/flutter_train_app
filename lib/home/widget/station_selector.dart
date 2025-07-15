@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_train_app/second/station_list_page.dart';
 import 'package:flutter_train_app/third/arrive_list_page.dart';
 
-class StationSelector extends StatelessWidget {
+class StationSelector extends StatefulWidget {
+  @override
+  State<StationSelector> createState() => _StationSelectorState();
+}
+
+class _StationSelectorState extends State<StationSelector> {
+  String? departureStation;
+  String? arrivalStation;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,10 +38,14 @@ class StationSelector extends StatelessWidget {
                       MaterialPageRoute(builder: (context) {
                     return StationListPage();
                   }));
-                  if (result != null) {}
+                  if (result != null) {
+                    setState(() {
+                      departureStation = result;
+                    });
+                  }
                 },
                 child: Text(
-                  '선택',
+                  departureStation ?? '선택',
                   style: TextStyle(fontSize: 40, color: Colors.black),
                 ),
               )
@@ -59,16 +70,18 @@ class StationSelector extends StatelessWidget {
                 onTap: () async {
                   String? result =
                       await Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
+                    builder: (_) {
                       return ArriveListPage();
                     },
                   ));
                   if (result != null) {
-                    print(Text('선택'));
+                    setState(() {
+                      arrivalStation = result;
+                    });
                   }
                 },
                 child: Text(
-                  '선택',
+                  arrivalStation ?? '선택',
                   style: TextStyle(fontSize: 40, color: Colors.black),
                 ),
               )
