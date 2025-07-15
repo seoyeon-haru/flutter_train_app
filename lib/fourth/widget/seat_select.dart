@@ -31,9 +31,33 @@ class SeatSelect extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           label(Colors.purple, '선택됨'),
-          SizedBox(width: 20,),
+          SizedBox(
+            width: 20,
+          ),
           label(Colors.grey[300]!, '선택안됨'), // 함수 선언
         ],
+      ),
+      Expanded(
+        child: Column(
+          children: [
+            Expanded(
+              child: Text(
+                'A',
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            chair(),
+            chair(),
+            chair(),
+            chair(),
+            chair(),
+            chair(),
+            chair(),
+            chair(),
+            chair(),
+            chair(),
+          ],
+        ),
       )
     ]);
   }
@@ -45,11 +69,25 @@ Row label(Color color, String text) {
       Container(
         width: 24,
         height: 24,
-        decoration: BoxDecoration(
-            color : color, borderRadius:  BorderRadius.circular(8)),
+        decoration:
+            BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
       ),
       SizedBox(width: 4),
       Text(text)
     ],
   );
+}
+
+Widget chair() {
+  return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: AspectRatio(
+            aspectRatio: 1,
+            child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8), color: Colors.grey[300]!),
+            ),
+          ),
+      ));
 }

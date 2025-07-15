@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_train_app/second/station_list_page.dart';
 import 'package:flutter_train_app/third/arrive_list_page.dart';
 
-
 class StationSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,16 +25,18 @@ class StationSelector extends StatelessWidget {
                     color: Colors.grey,
                     fontWeight: FontWeight.bold),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return StationListPage();
-                    },
-                  ));
+              GestureDetector(
+                onTap: () async {
+                  String? result = await Navigator.push(context,
+                      MaterialPageRoute(builder: (context) {
+                    return StationListPage();
+                  }));
+                  if (result != null) {}
                 },
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.white, elevation: 0),
-                child: Text('선택', style: TextStyle(fontSize: 40, color: Colors.black),),
+                child: Text(
+                  '선택',
+                  style: TextStyle(fontSize: 40, color: Colors.black),
+                ),
               )
             ],
           ),
@@ -54,13 +55,23 @@ class StationSelector extends StatelessWidget {
                     color: Colors.grey,
                     fontWeight: FontWeight.bold),
               ),
-              ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return ArriveListPage();
-                }));
-              }, 
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.white, elevation: 0),
-              child: Text('선택', style: TextStyle(fontSize: 40, color: Colors.black),),)
+              GestureDetector(
+                onTap: () async {
+                  String? result =
+                      await Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return ArriveListPage();
+                    },
+                  ));
+                  if (result != null) {
+                    print(Text('선택'));
+                  }
+                },
+                child: Text(
+                  '선택',
+                  style: TextStyle(fontSize: 40, color: Colors.black),
+                ),
+              )
             ],
           ) // 텍스트 스타일 변경
         ],
