@@ -4,6 +4,7 @@ import 'package:flutter_train_app/home/widget/station_selector.dart';
 import 'package:flutter_train_app/second/station_list_page.dart';
 
 class HomePage extends StatefulWidget {
+const HomePage({super.key});
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -11,8 +12,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
  String departureStation = '선택';
   String arrivalStation = '선택';
+void onDepartureSelect(String newStation) {
+  setState(() {
+    departureStation = newStation;
+  });
+}
+void onArrivalSelect(String newStation) {
+  setState(() {
+    arrivalStation = newStation;
+  });
+}
 
- const _HomePageState({required this.departureStation, required this.arrivalStation});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +36,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            StationSelector(),
+            StationSelector(departureStation, arrivalStation, onDepartureSelect, onArrivalSelect),
             SizedBox(height: 20), // 간격
             SizedBox(
               width: double.infinity,

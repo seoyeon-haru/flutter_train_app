@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_train_app/second/station_list_page.dart';
 import 'package:flutter_train_app/third/arrive_list_page.dart';
 
-class StationSelector extends StatefulWidget {
-  @override
-  State<StationSelector> createState() => _StationSelectorState();
-}
+class StationSelector extends StatelessWidget {
+  final String departureStation;
+  final String arrivalStation;
+  void Function(String) onDepartureSelect;
+  void Function(String) onArrivalSelect;
 
-class _StationSelectorState extends State<StationSelector> {
-  String? departureStation;
-  String? arrivalStation;
+  StationSelector(this.departureStation, this.arrivalStation,
+      this.onDepartureSelect, this.onArrivalSelect);
 
-  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,12 +37,13 @@ class _StationSelectorState extends State<StationSelector> {
                 onTap: () async {
                   String? result = await Navigator.push(context,
                       MaterialPageRoute(builder: (context) {
-                    return StationListPage(departureStation: departureStation, arrivalStation: arrivalStation,); // 역 리스트
+                    return StationListPage(
+                      departureStation: departureStation,
+                      arrivalStation: arrivalStation,
+                    ); // 역 리스트
                   }));
                   if (result != null) {
-                    setState(() {
-                      departureStation = result;
-                    });
+                    onDepartureSelect(result);
                   }
                 },
                 child: Text(
@@ -77,9 +77,7 @@ class _StationSelectorState extends State<StationSelector> {
                     },
                   ));
                   if (result != null) {
-                    setState(() {
-                      arrivalStation = result;
-                    });
+                    onArrivalSelect(result);
                   }
                 },
                 child: Text(
